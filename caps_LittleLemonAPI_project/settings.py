@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'caps_littlelemon',  
         'USER': 'root',  
-        'PASSWORD': 'Nobel2023+',  
+        'PASSWORD': 'password',  
         'HOST': '127.0.0.1',  
         'PORT': '3306',  
         'OPTIONS': {  
@@ -146,10 +146,10 @@ STATICFILES_DIRS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDER_CLASSES': [
-        'rest_framework.renders.JSONRenderer',
-        'rest_framework.renders.BrowsableAPIRenderer',
-        'rest_framework_xml.renders.XMLRenderer',
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework_xml.renderers.XMLRenderer',  # Ensure you have installed `djangorestframework-xml`
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
